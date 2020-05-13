@@ -22,6 +22,7 @@
 							https://www.freecodecamp.org/news/testing-react-hooks/
 
 							https://medium.com/faun/integrate-unit-testing-with-gitlab-pipelines-basics-4c85e47ae608
+							https://www.freecodecamp.org/news/the-right-way-to-test-react-components-548a4736ab22/
 
 
 						
