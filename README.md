@@ -3,10 +3,10 @@
 
 # Test setup 
 
-                             ## Create empty project https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-an-express-server-on-heroku-32244fe5a250/
+                               ## Create empty project https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-an-express-server-on-heroku-32244fe5a250/
 
 
-                            ## Pre hooks ->  
+                               ## Pre hooks ->  
                               
                               
                                     # Simple git hooks
@@ -15,13 +15,13 @@
 
 
 
-			  ##Gitlab and Unit testing integration
+				  ##Gitlab and Unit testing integration
 
-				## Staging-> Unit-testing
-				
-						https://www.freecodecamp.org/news/testing-react-hooks/
+					## Staging-> Unit-testing
 
-						https://medium.com/faun/integrate-unit-testing-with-gitlab-pipelines-basics-4c85e47ae608
+							https://www.freecodecamp.org/news/testing-react-hooks/
+
+							https://medium.com/faun/integrate-unit-testing-with-gitlab-pipelines-basics-4c85e47ae608
 
 
 						
