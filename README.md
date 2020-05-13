@@ -14,6 +14,19 @@
                                     https://medium.com/better-programming/simple-git-hooks-with-create-react-app-eslint-and-husky-6983806dba5c
 
 
+
+			  ##Gitlab and Unit testing integration
+
+				## Staging-> Unit-testing
+				
+						https://www.freecodecamp.org/news/testing-react-hooks/
+
+						https://medium.com/faun/integrate-unit-testing-with-gitlab-pipelines-basics-4c85e47ae608
+
+
+						
+
+
                             ## Gitlab -> 
                               
                                     # Setup Gitlab
@@ -23,15 +36,7 @@
 			    
 			    
 			    
-			    ##Gitlab and Unit testing integration
-						
-						https://www.freecodecamp.org/news/testing-react-hooks/
-                                
-				               https://medium.com/faun/integrate-unit-testing-with-gitlab-pipelines-basics-4c85e47ae608
-						
-			
-                             ## Staging-> Unit-testing
-
+			  
 	  
 	  
 	  
