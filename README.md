@@ -1,7 +1,7 @@
 # CI-CD-Playground
 
 
-# Test setup 
+# Setup 
 
                                ## Create empty project https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-an-express-server-on-heroku-32244fe5a250/
 
@@ -28,16 +28,21 @@
 						
 
 
-                            ## Gitlab -> 
-                              
-                                    # Setup Gitlab
-			
-		                              	https://medium.com/swlh/how-do-i-deploy-my-code-to-heroku-using-gitlab-ci-cd-6a232b6be2e4	
+				    ## Gitlab -> 
+
+					    # Setup Gitlab
+
+							https://medium.com/swlh/how-do-i-deploy-my-code-to-heroku-using-gitlab-ci-cd-6a232b6be2e4	
 			    
 			    
 			    
-			    
-			  
+
+				  ## Gitlab Error tracking 
+
+				  https://sentry.io/integrations/gitlab/
+
+				  https://about.gitlab.com/blog/2019/01/25/sentry-integration-blog-post/
+	  
 	  
 	  
 	  
