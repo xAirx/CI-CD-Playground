@@ -19,29 +19,15 @@
                                     # Setup Gitlab
 			
 		                              	https://medium.com/swlh/how-do-i-deploy-my-code-to-heroku-using-gitlab-ci-cd-6a232b6be2e4	
+			     ##Gitlab and Unit testing integration
 						
+						https://www.freecodecamp.org/news/testing-react-hooks/
+                                
+				               https://medium.com/faun/integrate-unit-testing-with-gitlab-pipelines-basics-4c85e47ae608
 						
 			
-                             ## Staging-> Unit-testing(Storybook.js)-> 
+                             ## Staging-> Unit-testing
 
-
-                                        ## StoryBook Component Stories and Snapshot testing
-
-                                      
-				        ## Storybook spec file for test stage.
-
-                                              https://www.youtube.com/watch?v=va-JzrmaiUM
-                                              https://www.youtube.com/watch?v=9B-IB2U3qSI
-                                              https://www.youtube.com/watch?v=q248uxiicwY
-                                              https://blog.logrocket.com/react-storybook/
-
-
-                                        ##Gitlab and Unit testing integration
-
-                                               https://medium.com/faun/integrate-unit-testing-with-gitlab-pipelines-basics-4c85e47ae608
-
-
-          
 	  
 	  
 	  
