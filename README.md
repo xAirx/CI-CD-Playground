@@ -126,8 +126,10 @@
 &nbsp; 			    
 				    
 	  	  
+# Travis CI (free)  same procedure as gitlab below	  
 	  
-	  
+	  https://codeburst.io/ci-cd-with-github-travis-ci-and-heroku-e088a24f32ef
+	  https://codeburst.io/ci-cd-with-github-travis-ci-and-heroku-e088a24f32ef
 	  
 
 # Gitlab (abandonded costs money..)
