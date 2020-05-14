@@ -209,6 +209,8 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 							    
 					https://boredhacking.com/mock-sentry-in-jest/
 
+### Sentry and Logrocket
+
                                         https://blog.logrocket.com/extending-sentry-with-logrocket-52e2f5b67d5a/    
 			    
 &nbsp;
