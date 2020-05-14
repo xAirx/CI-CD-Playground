@@ -42,44 +42,54 @@
 		---------- IMPORTANT DETAIL WITH HEROKU AND GIT + PACKAGE.JSON + BUILDPACK-----------
 			     
 			    
-			    The folder structure HAS to look like this:
-			     
 			     Create git folder, then CRA
-			     move contents out of the CRA folder into the "ROOT" git folder. else heroku wont see the package.json  
+			     move contents out of the CRA folder into the "ROOT" git folder. else heroku wont see the package.json
+			     			     
+				FOLDER STRUCTURE HAS TO LOOK LIKE THIS:
+<img src="https://imgur.com/FGTnAb9.png" width="200">
 			     
 			     The buildpack has to be set to the following: 
-			     
+			     https://github.com/mars/create-react-app-buildpack
 			     https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz
 			     
 			     The buildpack is the docker image that builds your setup on heroku.
 			     
-			     
-<img src="https://imgur.com/FGTnAb9.png" width="200">
-			
 			    
 ![](https://imgur.com/Wb0PMz2.png)
 			
 			
-			
+					
+		
+				
+				
+#### Herokus OWN CI
+				
+					Heroku CI automatically runs your app’s test suite with every push to your app’s GitHub repository, enabling you to easily review test results before merging or deploying changes to your codebase. Tests execute in a disposable environment that closely resembles your staging and production environments, which helps to ensure that results are accurate and obtained safely.
+
+					Heroku CI works seamlessly with any Heroku Pipeline.
+
+				<img src="https://imgur.com/5YzKMdV" width="200">
+				
 
 
-				## Heroku and CI/CD + TravisCI
+#### Deploy to Heroku
 				
-				
-				
-				
-				
-
-				## Deploy to Heroku
-			    	https://medium.com/jeremy-gottfrieds-tech-blog/tutorial-how-to-deploy-a-production-react-app-to-heroku-c4831dfcfa08
-			    https://blog.heroku.com/deploying-react-with-zero-configuration
-			    https://dev.to/smithmanny/deploy-your-react-app-to-heroku-2b6f
-			    https://medium.com/@prestonwallace/deploy-your-react-node-app-to-heroku-in-15-minutes-or-less-3-steps-134c766d8d9a
+			    	   https://medium.com/jeremy-gottfrieds-tech-blog/tutorial-how-to-deploy-a-production-react-app-to-heroku-c4831dfcfa08
+			   	   https://blog.heroku.com/deploying-react-with-zero-configuration
+			 	   https://dev.to/smithmanny/deploy-your-react-app-to-heroku-2b6f
+			 	   https://medium.com/@prestonwallace/deploy-your-react-node-app-to-heroku-in-15-minutes-or-less-3-steps-134c766d8d9a
 			    
 			    
 			    
-			    
-			    
+				
+				
+#### Sentry and Heroku 
+				
+					https://elements.heroku.com/addons/sentry
+					https://sentry.io/integrations/heroku/
+					https://devcenter.heroku.com/articles/sentry
+							    
+							    
 			    
 &nbsp;
 &nbsp; 
