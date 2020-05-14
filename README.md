@@ -109,13 +109,41 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 			    
 			    				
 				
-#### Sentry and Heroku 
+#### Sentry and Heroku  + logrocket 
+
+
+
+## Adding sentry to github oauth and setting up project
+
+
+<img src="https://imgur.com/8D8BBOc.png" width="200">
+
+<img src="https://imgur.com/aeER1dV.png" width="200">
+
+	
+	#### Viewing Sentry
+
+	Heroku provides an easy interface for logging into the Sentry web UI:
+
+	heroku addons:open sentry
+
+	
+	### Provisioning the add-on
+
+	Start by adding the Sentry addon:
+
+	heroku addons:create sentry
+
+
+
 				
 					https://elements.heroku.com/addons/sentry
 					https://sentry.io/integrations/heroku/
 					https://devcenter.heroku.com/articles/sentry
 							    
-							    
+					https://boredhacking.com/mock-sentry-in-jest/
+
+                                        https://blog.logrocket.com/extending-sentry-with-logrocket-52e2f5b67d5a/    
 			    
 &nbsp;
 &nbsp; 
