@@ -125,10 +125,11 @@
 ##### What didnt work:			    
 			
 			   Using the external repo, I cannot get it to sync properly with the gitlab repo, as in github -> gitlab, syncing should be set up automatically  as per their documentations
-			   
-			      
-![](https://imgur.com/Oyi9p99.png)
-			     
+
+
+
+<img src="https://imgur.com/Oyi9p99.png" width="200">
+
 			    
 ![](https://imgur.com/g7hIa18.png)
 			
