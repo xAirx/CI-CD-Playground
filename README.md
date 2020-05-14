@@ -10,9 +10,10 @@
                               ## Pre hooks ->  
                               
                               
-                               # Simple git hooks
+                               # Simple git hooks ( eslint running fixing everything)
 
                                     https://medium.com/better-programming/simple-git-hooks-with-create-react-app-eslint-and-husky-6983806dba5c
+				    
 
 			    
 &nbsp;
@@ -137,6 +138,25 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 
 
 ### Implementing Sentry into code 
+
+
+		Sentry is for tracking live apps in production.
+
+		commit -> push -> triggers build
+		
+		
+		RNG: Which errorrs are sentry aimed at am i misunderstanding ?
+		[3:11 PM] W1SH: sentry is not meant for code analysis
+		[3:11 PM] W1SH: runtime errors is what it's for
+		[3:12 PM] RNG: So a user does something on the site
+		[3:12 PM] RNG: something breaks
+		[3:12 PM] RNG: sentry gets notified
+		[3:12 PM] W1SH: exactly!
+		[3:12 PM] W1SH: let' say your database is down
+		[3:12 PM] W1SH: server can't connect
+		[3:12 PM] W1SH: boom, error
+
+
 
 		https://know-thy-code.com/sentry-io-using-node-js/
 
