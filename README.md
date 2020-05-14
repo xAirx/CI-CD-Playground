@@ -7,14 +7,34 @@
 			     ## Git setup with branches etc.
 
 
-                             ## Pre hooks ->  
+                              ## Pre hooks ->  
                               
                               
                                # Simple git hooks
 
                                     https://medium.com/better-programming/simple-git-hooks-with-create-react-app-eslint-and-husky-6983806dba5c
 
-
+			    
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
 
 ## Heroku
 
@@ -60,6 +80,7 @@
 			    
 			    
 			    
+			    
 &nbsp;
 &nbsp; 
 &nbsp;     
@@ -82,6 +103,18 @@
 &nbsp; 
 &nbsp;
 &nbsp; 			    
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 			    
+				    
 	  	  
 	  
 	  
@@ -180,7 +213,29 @@
 &nbsp; 
 &nbsp;
 &nbsp; 	
-
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 			    
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 			    
+		
 # Extra
 
 
