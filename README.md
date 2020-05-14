@@ -59,17 +59,7 @@
 			
 			
 					
-		
-				
-				
-#### Herokus OWN CI
-				
-					Heroku CI automatically runs your app’s test suite with every push to your app’s GitHub repository, enabling you to easily review test results before merging or deploying changes to your codebase. Tests execute in a disposable environment that closely resembles your staging and production environments, which helps to ensure that results are accurate and obtained safely.
-
-					Heroku CI works seamlessly with any Heroku Pipeline.
-
-<img src="https://imgur.com/5YzKMdV.png" width="200">
-				
+					
 
 
 #### Deploy to Heroku
@@ -124,15 +114,54 @@
 &nbsp; 
 &nbsp;
 &nbsp; 			    
-				    
+	
+# Github Actions
+
+	 https://dev.to/heroku/deploying-to-heroku-from-github-actions-29ej
+
+
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 			    
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 			    
+		
 	  	  
 # Travis CI (free)  same procedure as gitlab below	  
 	  
 	  https://codeburst.io/ci-cd-with-github-travis-ci-and-heroku-e088a24f32ef
 	  https://codeburst.io/ci-cd-with-github-travis-ci-and-heroku-e088a24f32ef
 	  
+	  
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp;
 
-# Gitlab (abandonded costs money..)
+#### Herokus OWN CI (PAID)
+
+https://www.heroku.com/pricing#cd-ci
+				
+					Heroku CI automatically runs your app’s test suite with every push to your app’s GitHub repository, enabling you to easily review test results before merging or deploying changes to your codebase. Tests execute in a disposable environment that closely resembles your staging and production environments, which helps to ensure that results are accurate and obtained safely.
+
+					Heroku CI works seamlessly with any Heroku Pipeline.
+
+<img src="https://imgur.com/5YzKMdV.png" width="200">
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 	
+
+# Gitlab (abandonded PAID)
 	
 	
 	## Learning Gitlab ( COSTS MONEY ) and Unit testing integration
