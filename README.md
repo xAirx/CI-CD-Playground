@@ -34,10 +34,10 @@
 			     The buildpack is the docker image that builds your setup on heroku.
 			     
 			     
-			     ![](https://imgur.com/FGTnAb9.png)
+![](https://imgur.com/FGTnAb9.png)
 			
 			    
-			    ![](https://imgur.com/Wb0PMz2.png)
+![](https://imgur.com/Wb0PMz2.png)
 			
 			
 			
@@ -114,11 +114,11 @@
 		I made it run the pipeline by forcing a push in the gitlab repo, since the sync(pull) isnt working.
 		
 		
-				![](https://imgur.com/X1ntRn8.png)
+![](https://imgur.com/X1ntRn8.png)
 			
-				![](https://imgur.com/VyodBif.png)
+![](https://imgur.com/VyodBif.png)
 		
-				![](https://imgur.com/GHb4mFS.png)
+![](https://imgur.com/GHb4mFS.png)
 			
 		
 		
@@ -128,10 +128,10 @@
 			   Using the external repo, I cannot get it to sync properly with the gitlab repo, as in github -> gitlab, syncing should be set up automatically  as per their documentations
 			   
 			      
-			     ![](https://imgur.com/Oyi9p99.png)
+![](https://imgur.com/Oyi9p99.png)
 			     
 			    
-			     ![](https://imgur.com/g7hIa18.png)
+![](https://imgur.com/g7hIa18.png)
 			
 		
 
