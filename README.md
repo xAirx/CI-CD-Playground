@@ -162,46 +162,8 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 					Sentry.captureException(error);
 					Copy
 
-			Of course, if there is no error, the error will be undefined and you will get a run-time error. A more realistic example may be this:
 
-					try {
-					    aFunctionThatMightFail();
-					} catch (err) {
-					    Sentry.captureException(err);
-					}
-					Copy
-
-					Globally Accessible
-
-			In almost all circumstances, you will want access to report errors, messages, and events without having to create a new instance of Sentry every time.
-
-			Make a file called log.js and paste the following code, substituting the DSN for your own provided in the Sentry platform.
-
-					const Sentry = require('@sentry/node');
-					Sentry.init({ dsn: 'https://whateveryourdsnis@sentry.io/123456789' });
-
-					module.exports = Sentry;
-					Copy
-
-			In any file, you can now require the exported module and log your errors. We will cover Sentry events later on.
-
-					const Sentry = require('./log');
-
-					// send an event to Sentry
-					Sentry.captureMessage('my message', 'warning');
-
-					// sent an error - automatically sends a callstack
-					try {
-						functionThatFailed();
-					} catch (error) {
-						Sentry.captureException(error);	
-					}
-
-					// send a custom event
-					Copy
-
-			If you’re using ES6, or TypeScript then you can implement a singleton pattern and import it, rather than require it. I’ll do an example on this in another article.
-
+#### Links
 				
 					https://elements.heroku.com/addons/sentry
 					https://sentry.io/integrations/heroku/
