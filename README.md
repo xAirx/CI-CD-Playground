@@ -39,8 +39,26 @@
 ## Heroku
 
 
+### Standard project deploy to heroku
+			
+			https://dev.to/smithmanny/deploy-your-react-app-to-heroku-2b6f
+
+			    heroku login (Enter your Heroku credentials)
+			    git init
+			    git add .
+			    git commit -m “initial commit”
+			    heroku create (You should see two links after running this command. Copy the second one)
+			    git remote add heroku PASTE THE LINK YOU JUST COPIED
+			    git push heroku master
+
+
+
+
+
+### Understanding Buildpack and Heroku
+
+
 		---------- IMPORTANT DETAIL WITH HEROKU AND GIT + PACKAGE.JSON + BUILDPACK-----------
-			     
 			    
 			     Create git folder, then CRA
 			     move contents out of the CRA folder into the "ROOT" git folder. else heroku wont see the package.json
@@ -69,7 +87,7 @@
 
 # Setup gitub to heroki git link ("couldnt find that app")
 
-git push heroku master.
+Read article and understand setup with remotes git push heroku master.
 
 https://apassionatechie.wordpress.com/2018/01/24/heroku-couldnt-find-that-app/
 
