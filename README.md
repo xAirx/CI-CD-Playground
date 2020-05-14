@@ -58,8 +58,14 @@
 ![](https://imgur.com/Wb0PMz2.png)
 			
 			
-					
-					
+# Github Actions
+
+	 https://dev.to/heroku/deploying-to-heroku-from-github-actions-29ej
+
+
+<img src="https://imgur.com/6gS3c4e.png" width="200">
+<img src="https://imgur.com/ncDNpeW.png" width="200">
+
 
 
 #### Deploy to Heroku
@@ -109,20 +115,6 @@
 &nbsp; 
 &nbsp;
 &nbsp;
-&nbsp; 
-&nbsp;  
-&nbsp; 
-&nbsp;
-&nbsp; 			    
-	
-# Github Actions
-
-	 https://dev.to/heroku/deploying-to-heroku-from-github-actions-29ej
-
-
-&nbsp; 
-&nbsp;  
-&nbsp; 
 &nbsp;
 &nbsp; 			    
 &nbsp; 
@@ -132,7 +124,7 @@
 &nbsp; 			    
 		
 	  	  
-# Travis CI (free)  same procedure as gitlab below	  
+# Travis CI (free)  "same" procedure as gitlab below	  
 	  
 	  https://codeburst.io/ci-cd-with-github-travis-ci-and-heroku-e088a24f32ef
 	  https://codeburst.io/ci-cd-with-github-travis-ci-and-heroku-e088a24f32ef
