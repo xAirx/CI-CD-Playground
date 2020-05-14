@@ -155,7 +155,7 @@
 		
 		
 		
-##### What didnt work:			    
+##### What didnt work (pulling worked initially - for some reason bugged at the point in time of me trying this):			    
 			
 			   Using the external repo, I cannot get it to sync properly with the gitlab repo, as in github -> gitlab, syncing should be set up automatically  as per their documentations
 
@@ -176,22 +176,25 @@
 			      
 			     -------- Tried gold membership to setup the pull feature (didnt work) ----------
 			      
+			     
+			     
+			     Circuventing pulling feature not working (NOT NEEDED) 
+			     
 			      
-			      Tried setting up webhooks (didnt work)
-			      
-				https://github.com/xAirx/WebShopApp/settings/hooks/210991692
-				https://gitlab.com/xAirx/WebShopApp/hooks
-				
-				    ![](https://imgur.com/g7hIa18.png)
-			            ![](https://imgur.com/g7hIa18.png)
-			
-				
-			    
-			      Tried project integrations with personal access token (didnt work)
-			         
-				 https://docs.gitlab.com/ee/user/project/integrations/github.html
-				 https://gitlab.com/xAirx/WebShopApp/-/services/github/edit
-			      
+					      Tried setting up webhooks (didnt work)
+
+						https://github.com/xAirx/WebShopApp/settings/hooks/210991692
+						https://gitlab.com/xAirx/WebShopApp/hooks
+
+						    ![](https://imgur.com/g7hIa18.png)
+						    ![](https://imgur.com/g7hIa18.png)
+
+
+					      Tried project integrations with personal access token (didnt work)
+
+						 https://docs.gitlab.com/ee/user/project/integrations/github.html
+						 https://gitlab.com/xAirx/WebShopApp/-/services/github/edit
+
 			      
 			      
   ###### Gitlab Error tracking (Not tried)
