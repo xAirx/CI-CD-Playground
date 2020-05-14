@@ -67,8 +67,21 @@
 <img src="https://imgur.com/ncDNpeW.png" width="200">
 
 
+# Setup gitub to heroki git link ("couldnt find that app")
+
+git push heroku master.
+
+https://apassionatechie.wordpress.com/2018/01/24/heroku-couldnt-find-that-app/
+
+
 
 #### Deploy to Heroku
+
+
+Ymlfile within github actions.
+https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
+
+
 				
 			    	   https://medium.com/jeremy-gottfrieds-tech-blog/tutorial-how-to-deploy-a-production-react-app-to-heroku-c4831dfcfa08
 			   	   https://blog.heroku.com/deploying-react-with-zero-configuration
