@@ -155,10 +155,35 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 		[3:12 PM] W1SH: let' say your database is down
 		[3:12 PM] W1SH: server can't connect
 		[3:12 PM] W1SH: boom, error
+		[3:12 PM] W1SH: error 500's are great examples
+		
+		
+		[3:14 PM] RNG: but sentry also has some JIRA feel to it as well
+		[3:14 PM] W1SH: because you can assign errors you mean?
+		[3:14 PM] RNG: yeaa
+		[3:14 PM] RNG: overview etc etc
+		[3:14 PM] W1SH: can be but again, not really it's purpose
+		[3:15 PM] W1SH: it's for tracking user-generated errors
 
 
 
 		https://know-thy-code.com/sentry-io-using-node-js/
+		
+		////// IF YOU COMMIT THIS FILE SENTRY WILL TRIGGER 
+		////// THE CI BUILD WILL FAIL 150% , BUT SENTRY WILL SEND AN EMAIL.
+		///// Normally you wont be commiting these errors since you can see them in your IDE (yarn start etc)
+
+
+		    // send an event to Sentry
+		Sentry.captureMessage('my message', 'warning');
+
+		// sent an error - automatically sends a callstack
+		try {
+			functionThatFailed()
+		} catch (error) {
+			Sentry.captureException(error);
+		}
+
 
 
 		Getting Started
@@ -194,6 +219,15 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 ### Sentry and Logrocket
 
                                         https://blog.logrocket.com/extending-sentry-with-logrocket-52e2f5b67d5a/    
+					
+					
+					Integrating Sentry and LogRocket
+
+					Integrating Sentry and LogRocket lets you see a LogRocket “session” for every error in Sentry. Here’s how it works:
+					
+					
+					
+					
 			    
 &nbsp;
 &nbsp; 
