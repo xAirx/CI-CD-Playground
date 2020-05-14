@@ -113,10 +113,9 @@
 			   
 		I made it run the pipeline by forcing a push in the gitlab repo, since the sync(pull) isnt working.
 		
-		
-![](https://imgur.com/X1ntRn8.png)
-			
-![](https://imgur.com/VyodBif.png)
+<img src="https://imgur.com/X1ntRn8.png" width="200">
+<img src="https://imgur.com/VyodBif.png" width="200">
+
 		
 ![](https://imgur.com/GHb4mFS.png)
 			
