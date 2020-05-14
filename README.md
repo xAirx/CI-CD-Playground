@@ -68,7 +68,7 @@
 
 					Heroku CI works seamlessly with any Heroku Pipeline.
 
-<img src="https://imgur.com/5YzKMdV" width="200">
+<img src="https://imgur.com/5YzKMdV.png" width="200">
 				
 
 
