@@ -34,7 +34,7 @@
 			     The buildpack is the docker image that builds your setup on heroku.
 			     
 			     
-<img src="https://imgur.com/FGTnAb9.png" width="48">
+<img src="https://imgur.com/FGTnAb9.png" width="200">
 			
 			    
 ![](https://imgur.com/Wb0PMz2.png)
