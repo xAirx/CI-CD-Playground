@@ -76,8 +76,7 @@
 			 	   https://medium.com/@prestonwallace/deploy-your-react-node-app-to-heroku-in-15-minutes-or-less-3-steps-134c766d8d9a
 			    
 			    
-			    
-				
+			    				
 				
 #### Sentry and Heroku 
 				
@@ -118,7 +117,10 @@
 &nbsp;
 &nbsp; 			    
 &nbsp; 
-&nbsp;  
+# Dockerized apps on heroku
+
+	https://medium.com/travis-on-docker/how-to-run-dockerized-apps-on-heroku-and-its-pretty-great-76e07e610e22
+
 &nbsp; 
 &nbsp;
 &nbsp; 			    
