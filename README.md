@@ -136,6 +136,11 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 
 
 
+### Implementing Sentry into code 
+
+		https://know-thy-code.com/sentry-io-using-node-js/
+
+
 		Getting Started
 
 					$ npm install @sentry/node@4.4.0 // or the latest version
