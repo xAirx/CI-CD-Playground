@@ -86,14 +86,14 @@
 <img src="https://imgur.com/ncDNpeW.png" width="200">
 
 
-## Setup gitub to heroki git link ("couldnt find that app")
+#### Fix gitub to heroku git link ("couldnt find that app")
 
 Read article and understand setup with remotes git push heroku master.
 
 https://apassionatechie.wordpress.com/2018/01/24/heroku-couldnt-find-that-app/
 
 
-#### Deploy to Heroku
+### Deploy to Heroku
 
 
 Ymlfile within github actions.
@@ -107,7 +107,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 			 	   https://medium.com/@prestonwallace/deploy-your-react-node-app-to-heroku-in-15-minutes-or-less-3-steps-134c766d8d9a
 			    
 			    
-#### Setup Github actions Production and Development workflow			
+### Setup Github actions Production and Development workflow			
 
 
 	https://spin.atomicobject.com/2020/01/20/github-actions-react-node/
@@ -158,11 +158,11 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 
 
 				
-#### Sentry and Heroku  + logrocket 
+## Sentry and Heroku  + logrocket 
 
 
 
-##### Adding sentry to github oauth and setting up project
+### Adding sentry to github oauth and setting up project
 
 
 
@@ -186,7 +186,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 
 
 
-###### Implementing Sentry into code 
+### Implementing Sentry into code 
 
 
 		Sentry is for tracking live apps in production.
@@ -259,7 +259,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 			}
 
 
-###### Implementing logrocket with sentry
+### Implementing logrocket with sentry
 
          https://blog.logrocket.com/extending-sentry-with-logrocket-52e2f5b67d5a/    
 					
@@ -314,7 +314,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 					
 					
 
-###### Links
+### Links
 				
 					https://elements.heroku.com/addons/sentry
 					https://sentry.io/integrations/heroku/
