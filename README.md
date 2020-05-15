@@ -226,10 +226,10 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 					Integrating Sentry and LogRocket lets you see a LogRocket “session” for every error in Sentry. Here’s how it works:
 				
 				
-<img src="https://imgur.com/c76NxPx.png" width="200">
+<img src="https://imgur.com/w6Jdvko.png" width="200">
 <img src="https://imgur.com/hCBUcNg.png" width="200">
-<img src="https://imgur.com/Oyi9p99.png" width="200">
 <img src="https://imgur.com/jBCi2D7.png" width="200">
+<img src="https://imgur.com/c76NxPx.png" width="200">
 <img src="https://imgur.com/6BK3Wij.png" width="200">
 					
 					
