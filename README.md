@@ -77,7 +77,7 @@
 ![](https://imgur.com/Wb0PMz2.png)
 			
 			
-# Github Actions
+## Github Actions
 
 	 https://dev.to/heroku/deploying-to-heroku-from-github-actions-29ej
 
@@ -86,12 +86,11 @@
 <img src="https://imgur.com/ncDNpeW.png" width="200">
 
 
-# Setup gitub to heroki git link ("couldnt find that app")
+## Setup gitub to heroki git link ("couldnt find that app")
 
 Read article and understand setup with remotes git push heroku master.
 
 https://apassionatechie.wordpress.com/2018/01/24/heroku-couldnt-find-that-app/
-
 
 
 #### Deploy to Heroku
@@ -108,13 +107,63 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 			 	   https://medium.com/@prestonwallace/deploy-your-react-node-app-to-heroku-in-15-minutes-or-less-3-steps-134c766d8d9a
 			    
 			    
-			    				
+#### Setup Github actions Production and Development workflow			
+
+
+	https://spin.atomicobject.com/2020/01/20/github-actions-react-node/
+	
+	yml file: 
+	
+		
+		name: Push Container to Heroku to Development
+
+		on:
+		  push:
+		    branches:
+		      - development
+		      - master
+
+		jobs:
+		  build:
+		    runs-on: ubuntu-latest
+
+		    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')
+		    env:
+		     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+		    steps:
+		    - uses: actions/checkout@v1
+		    - name: Login to Heroku Container registry
+		      env:
+			HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+		      run: heroku container:login
+		    - name: Install Dependencies - yarn install
+		      run: yarn install
+		    - name: Unit tests - yarn test
+		      run: yarn test
+
+
+		    - name: Set Dev Environment
+		      if: github.ref == 'refs/heads/development'
+		      run: echo "::set-env name=ENVIRONMENT::staging"
+
+		    - name: Set Production Environment
+		      if: github.ref == 'refs/heads/master'
+		      run: echo "::set-env name=ENVIRONMENT::production"
+
+		    - name: Push to Heroku
+		      run: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/webshopproject-$ENVIRONMENT.git origin/master:master
+
+<img src="https://imgur.com/6DikZ7l.png" width="200">
+
+
 				
 #### Sentry and Heroku  + logrocket 
 
 
 
-## Adding sentry to github oauth and setting up project
+##### Adding sentry to github oauth and setting up project
+
 
 
 <img src="https://imgur.com/8D8BBOc.png" width="200">
@@ -137,7 +186,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 
 
 
-### Implementing Sentry into code 
+###### Implementing Sentry into code 
 
 
 		Sentry is for tracking live apps in production.
@@ -167,65 +216,96 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 
 
 
-		https://know-thy-code.com/sentry-io-using-node-js/
-		
-		////// IF YOU COMMIT THIS FILE SENTRY WILL TRIGGER 
-		////// THE CI BUILD WILL FAIL 150% , BUT SENTRY WILL SEND AN EMAIL.
-		///// Normally you wont be commiting these errors since you can see them in your IDE (yarn start etc)
+			Add the Sentry SDK as a dependency using yarn or npm:
+
+			# Using yarn
+			$ yarn add @sentry/browser
+
+			# Using npm
+			$ npm install @sentry/browser
+
+			Connecting the SDK to Sentry
+
+			After you’ve completed setting up a project in Sentry, Sentry will give you a value which we call a DSN or Data Source Name. It looks a lot like a standard URL, but it’s just a representation of the configuration required by the Sentry SDKs. It consists of a few pieces, including the protocol, public key, the server address, and the project identifier.
+
+			You should init the Sentry browser SDK as soon as possible during your application load up, before initializing React:
+
+			import React from 'react';
+			import ReactDOM from 'react-dom';
+			import * as Sentry from '@sentry/browser';
+			import App from './App';
+
+			Sentry.init({dsn: "https://0279e0a3aae840339f4a711848494919@o392672.ingest.sentry.io/5240589"});
+
+			ReactDOM.render(<App />, document.getElementById('root'));
+
+			On its own, @sentry/browser will report any uncaught exceptions triggered from your application.
+
+			You can trigger your first event from your development environment by raising an exception somewhere within your application. An example of this would be rendering a button:
+			
+			function App() {
+			  const methodDoesNotExist = () => {
+			    console.log('wtf');
+			    methodExistsNot();
+			  };
+
+			  return (
+			    <div>
+			      <h1>Webshop - MasterBranch</h1>
+			      <Homepage />
+			      <button onClick={methodDoesNotExist}>Test Sentry</button>;
+			    </div>
+			  );
+			}
 
 
-		    // send an event to Sentry
-		Sentry.captureMessage('my message', 'warning');
+###### Implementing logrocket with sentry
 
-		// sent an error - automatically sends a callstack
-		try {
-			functionThatFailed()
-		} catch (error) {
-			Sentry.captureException(error);
-		}
-
-
-
-		Getting Started
-
-					$ npm install @sentry/node@4.4.0 // or the latest version
-
-					// or
-
-					$ yarn add @sentry/node@4.4.0 // or the latest version
-					Copy
-
-
-			In the entry point of your Node.js application, typically main.js or app.js; add the following lines:
-
-					const Sentry = require('@sentry/node');
-					Sentry.init({ dsn: 'https://whateveryourdsnis@sentry.io/123456789' });
-					Copy
-
-			Anywhere in your main file, where you have access to the object, you can call the following method:
-
-					Sentry.captureException(error);
-					Copy
-
-
-#### Links
-				
-					https://elements.heroku.com/addons/sentry
-					https://sentry.io/integrations/heroku/
-					https://devcenter.heroku.com/articles/sentry
-							    
-					https://boredhacking.com/mock-sentry-in-jest/
-
-### Sentry and Logrocket
-
-                                        https://blog.logrocket.com/extending-sentry-with-logrocket-52e2f5b67d5a/    
+         https://blog.logrocket.com/extending-sentry-with-logrocket-52e2f5b67d5a/    
 					
 					
-					Integrating Sentry and LogRocket
+	Integrating Sentry and LogRocket
 
-					Integrating Sentry and LogRocket lets you see a LogRocket “session” for every error in Sentry. Here’s how it works:
+	Integrating Sentry and LogRocket lets you see a LogRocket “session” for every error in Sentry. Here’s how it works:
+				
+
+			// if using React 16.10
+			npm i logrocket-react --save
+			
+			1. Install thelogrocketmodule via NPM:
+
+			npm i --save logrocket
+
+			2. Import LogRocket and callLogRocket.initlike so:
+
+			import LogRocket from 'logrocket';
+			LogRocket.init('8ckc5m/my-master-project-dev');
+
+			Code: 
+
+				import * as Sentry from '@sentry/browser';
+				// or using CommonJS
+				import LogRocket from 'logrocket';
+				import setupLogRocketReact from 'logrocket-react';
+				import Homepage from './HomepageComponent';
+
+				LogRocket.init('8ckc5m/my-master-project-dev');
+				// after calling LogRocket.init()
+				setupLogRocketReact(LogRocket);
+
+				/* import TriggerSentry from './TriggerSentry'; */
+				Sentry.configureScope(scope => {
+				  scope.setExtra('sessionURL', LogRocket.sessionURL);
+				});
+
+				LogRocket.getSessionURL(sessionURL => {
+				  Sentry.configureScope(scope => {
+				    scope.setExtra('sessionURL', sessionURL);
+				  });
+				});
 				
 				
+								
 <img src="https://imgur.com/w6Jdvko.png" width="200">
 <img src="https://imgur.com/hCBUcNg.png" width="200">
 <img src="https://imgur.com/jBCi2D7.png" width="200">
@@ -233,7 +313,16 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 <img src="https://imgur.com/6BK3Wij.png" width="200">
 					
 					
-					
+
+###### Links
+				
+					https://elements.heroku.com/addons/sentry
+					https://sentry.io/integrations/heroku/
+					https://devcenter.heroku.com/articles/sentry
+							    
+					https://boredhacking.com/mock-sentry-in-jest/
+
+			
 			    
 &nbsp;
 &nbsp; 
