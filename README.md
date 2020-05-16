@@ -112,47 +112,80 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 
 	https://spin.atomicobject.com/2020/01/20/github-actions-react-node/
 	
+	
+	
+#### Handling ENV variables, so they arent local to each step...	
+
+		https://github.com/marketplace/actions/set-env
+	
+	
 	yml file: 
 	
 		
 		name: Push Container to Heroku to Development
 
-		on:
-		  push:
-		    branches:
-		      - development
-		      - master
+				on:
+				  push:
+				    branches:
+				      - development
+				      - master
 
-		jobs:
-		  build:
-		    runs-on: ubuntu-latest
+				jobs:
+				  build:
+				    runs-on: ubuntu-latest
 
-		    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')
-		    env:
-		     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+				    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/development')
+				    env:
+				      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
 
-		    steps:
-		    - uses: actions/checkout@v1
-		    - name: Login to Heroku Container registry
-		      env:
-			HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-		      run: heroku container:login
-		    - name: Install Dependencies - yarn install
-		      run: yarn install
-		    - name: Unit tests - yarn test
-		      run: yarn test
+				    steps:
+				      - uses: actions/checkout@v1
+				      - name: Login to Heroku Container registry
+					env:
+					  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+					run: heroku container:login
+				      - name: Install Dependencies - yarn install
+					run: yarn install
+				      - name: Unit tests - yarn test
+					run: yarn test
 
+				      - name: Set Dev Environment
+					if: github.ref == 'refs/heads/development'
+					uses: allenevans/set-env@v1.0.0
+					with:
+					  ENVIRONMENT: "development"
+					  BRANCH: "development"
 
-		    - name: Set Dev Environment
-		      if: github.ref == 'refs/heads/development'
-		      run: echo "::set-env name=ENVIRONMENT::staging"
+				      - name: Printdevenv
+					if: github.ref == 'refs/heads/development'
+					run: |
+					  echo "ENVIRONMENT=${ENVIRONMENT}"
+					  printenv
+				      - name: Printdevbranchenv
+					if: github.ref == 'refs/heads/development'
+					run: |
+					  echo "BRANCH=${BRANCH}"
+					  printenv
+				      - name: Set Production Environment
+					if: github.ref == 'refs/heads/master'
+					uses: allenevans/set-env@v1.0.0
+					with:
+					  ENVIRONMENT: "production"
+					  BRANCH: "master"
 
-		    - name: Set Production Environment
-		      if: github.ref == 'refs/heads/master'
-		      run: echo "::set-env name=ENVIRONMENT::production"
+				      - name: Printproductionenv
+					if: github.ref == 'refs/heads/master'
+					run: |
+					  echo "ENVIRONMENT=${ENVIRONMENT}"
+					  printenv
+				      - name: Printprodbranchenv
+					if: github.ref == 'refs/heads/master'
+					run: |
+					  echo "BRANCH=${BRANCH}"
+					  printenv
+				      - name: Push to Heroku
 
-		    - name: Push to Heroku
-		      run: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/webshopproject-$ENVIRONMENT.git origin/master:master
+					run: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/webshopproject-$ENVIRONMENT.git origin/$BRANCH:master
 
 <img src="https://imgur.com/6DikZ7l.png" width="200">
 
