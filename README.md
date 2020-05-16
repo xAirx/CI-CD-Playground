@@ -190,6 +190,13 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 <img src="https://imgur.com/6DikZ7l.png" width="200">
 
 
+
+## Adding basic auth to dev server to password protect it.
+
+https://blog.logrocket.com/securing-a-react-app/
+https://hackernoon.com/serverless-password-protecting-a-static-website-in-an-aws-s3-bucket-bfaaa01b8666
+
+
 				
 ## Sentry and Heroku  + logrocket 
 
