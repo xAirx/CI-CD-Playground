@@ -224,7 +224,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 &nbsp;
 
 
-#### Handling ENV variables, Locally and Remotely on heroku server
+## Handling ENV variables, Locally and Remotely on heroku server
 
 
 			Setup ENV's with DOTenv Express VS react lccal and production.
@@ -232,7 +232,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 			We want to render a component based on env variables set to dev or production.
 
 
-#### Setting it up locally fist:
+### Setting it up locally fist:
 
 
 			App.js 
@@ -273,7 +273,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 &nbsp; 			    
 &nbsp;
 
-#### Setting up env variable to work on development and production server
+### Setting up env variable to work on development and production server
 
 
 			Doing it The Express way
@@ -295,12 +295,12 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 				Heroku populates the process.env with its env's defined in the dashboard.
 				
 
-<img src="https://imgur.com/eYl0L0I" width="200">
+<img src="https://imgur.com/eYl0L0I.png" width="200">
 
-<img src="https://imgur.com/qJUFzAZ" width="200">
+<img src="https://imgur.com/qJUFzAZ.png" width="200">
 
 
-<img src="https://imgur.com/UZLurFl" width="200">
+<img src="https://imgur.com/UZLurFl.png" width="200">
 
 &nbsp;
 &nbsp; 
