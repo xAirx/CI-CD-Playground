@@ -177,7 +177,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 &nbsp; 			    
 &nbsp;	
 	
-#### Handling ENV variables, so they arent local to each step...	
+## Handling ENV variables, so they arent local to each step...	
 
 		https://github.com/marketplace/actions/set-env
 	
@@ -263,7 +263,13 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 &nbsp;
 &nbsp; 			    
 &nbsp;
-
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
 
 ## RENDER COMPONENT CONDITIONALLY - Handling ENV variables, Locally and Remotely on heroku server
 
@@ -301,18 +307,8 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 							“in .env SERVER_MODE=development should be REACT_APP_SERVER_MODE=development”
 
 
-			&nbsp;
-			&nbsp; 
-			&nbsp;     
-			&nbsp; 
-			&nbsp;
-			&nbsp;
-			&nbsp; 
-			&nbsp;  
-			&nbsp; 
-			&nbsp;
-			&nbsp; 			    
-			&nbsp;
+
+
 
 			### Setting up env variable to work on development and production server
 
@@ -352,7 +348,19 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 &nbsp;  
 &nbsp; 
 &nbsp;
-&nbsp; 			    
+&nbsp; 
+
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 
 &nbsp;
 
 ## TERRAFORM - Browser Basic auth - Adding password protection to static react app on heroku
@@ -501,6 +509,17 @@ Technologies
 &nbsp; 			    
 &nbsp;
 
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 
 
 ### Adding sentry to github oauth and setting up project
 
@@ -621,6 +640,18 @@ Technologies
 &nbsp;
 &nbsp; 			    
 &nbsp;
+
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 
 ### Implementing logrocket with sentry
 
          https://blog.logrocket.com/extending-sentry-with-logrocket-52e2f5b67d5a/    
@@ -687,6 +718,18 @@ Technologies
 &nbsp;
 &nbsp; 			    
 &nbsp;
+
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 
 ### Links
 				
 					https://elements.heroku.com/addons/sentry
