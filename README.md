@@ -86,14 +86,30 @@
 <img src="https://imgur.com/ncDNpeW.png" width="200">
 
 
-#### Fix gitub to heroku git link ("couldnt find that app")
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+
+
+
+## Fix gitub to heroku git link ("couldnt find that app")
 
 Read article and understand setup with remotes git push heroku master.
 
 https://apassionatechie.wordpress.com/2018/01/24/heroku-couldnt-find-that-app/
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
 
-
-### Deploy to Heroku
+## Deploying to Heroku
 
 
 Ymlfile within github actions.
@@ -118,8 +134,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 &nbsp;
 &nbsp; 			    
 &nbsp;			    
-### Setup Github actions Production and Development workflow			
-
+## Setup Github actions Production and Development workflow			
 
 	https://spin.atomicobject.com/2020/01/20/github-actions-react-node/
 	
