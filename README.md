@@ -365,17 +365,19 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 
 ## TERRAFORM - Browser Basic auth - Adding password protection to static react app on heroku
 
-Buildpack to add to dev server: 
+	Buildpack to add to dev server: 
 
-https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/crak.tgz
-
-
-Securing Static Heroku React Site with Password and Admin login.
-
-https://github.com/mars/crak-buildpack#user-content-quick-start
+	https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/crak.tgz
 
 
-Technologies
+	Securing Static Heroku React Site with Password and Admin login.
+
+	https://github.com/mars/crak-buildpack#user-content-quick-start
+	
+	https://docs.konghq.com/hub/kong-inc/basic-auth/
+
+	
+	Technologies
 
 	 Terraform
 
@@ -493,6 +495,26 @@ Technologies
 
 
 
+
+	IF any errors related to KONG 
+	
+	
+	remote: Error: Error applying plan:        
+	remote: 
+	remote: 1 error(s) occurred:        
+	remote: 
+	remote: * kong_plugin.react_basic_auth: 1 error(s) occurred:        
+	remote: 
+	remote: * kong_plugin.react_basic_auth: failed to create kong plugin: &{basic-auth   6272884b-a3db-4d23-a569-95947e9db67e  map[hide_credentials:true]} error: could not create plugin, err: {"name":"already exists with value 'basic-auth'"}   
+
+	
+	DO: 
+
+		Purge postgres DB (remove) from heroku
+
+		heroku run terraform refresh <- fixes state issues
+		
+		Then deploy again.
 
 
 
