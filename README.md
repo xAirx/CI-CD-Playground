@@ -224,7 +224,7 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 &nbsp;
 
 
-## Handling ENV variables, Locally and Remotely on heroku server
+## RENDER COMPONENT CONDITIONALLY - Handling ENV variables, Locally and Remotely on heroku server
 
 
 			Setup ENV's with DOTenv Express VS react lccal and production.
@@ -232,73 +232,72 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 			We want to render a component based on env variables set to dev or production.
 
 
-### Setting it up locally fist:
+			### Setting it up locally first:
 
 
-			App.js 
+						App.js 
 
 
-			require('dotenv').config();
+						require('dotenv').config();
 
-			  {process.env.REACT_APP_SERVER_MODE === 'development' ? <SentryComponent /> : ''}
-
-
-			Doing it The express way
-
-				In express you do not prefix with REACT_APP_*******
-
-				so the env can simply just be SERVER_MODE and be accessed by process.env.SERVERMODE
+						  {process.env.REACT_APP_SERVER_MODE === 'development' ? <SentryComponent /> : ''}
 
 
-			Doing it The react way
-			
-				Prefixing .env variables with REACT_APP
+						Doing it The express way
 
-				React only includes variables with that prefix, so you if you have malicious dependencies, or just a public build, you don't expose things like local keys and stuff
+							In express you do not prefix with REACT_APP_*******
 
-
-				“in .env SERVER_MODE=development should be REACT_APP_SERVER_MODE=development”
+							so the env can simply just be SERVER_MODE and be accessed by process.env.SERVERMODE
 
 
-&nbsp;
-&nbsp; 
-&nbsp;     
-&nbsp; 
-&nbsp;
-&nbsp;
-&nbsp; 
-&nbsp;  
-&nbsp; 
-&nbsp;
-&nbsp; 			    
-&nbsp;
+						Doing it The react way
 
-### Setting up env variable to work on development and production server
+							Prefixing .env variables with REACT_APP
+
+							React only includes variables with that prefix, so you if you have malicious dependencies, or just a public build, you don't expose things like local keys and stuff
 
 
-			Doing it The Express way
-
-				 Heroku will normally populate our process.env for us, with the environment variables set in its own dashboard, just like how github has its secrets.
-
-				This applies to when we work with express.
+							“in .env SERVER_MODE=development should be REACT_APP_SERVER_MODE=development”
 
 
+			&nbsp;
+			&nbsp; 
+			&nbsp;     
+			&nbsp; 
+			&nbsp;
+			&nbsp;
+			&nbsp; 
+			&nbsp;  
+			&nbsp; 
+			&nbsp;
+			&nbsp; 			    
+			&nbsp;
 
-			Doing it The react way
+			### Setting up env variable to work on development and production server
 
-				if we were working with REACT we would just add these to heroku  in the dashboard like this:
 
-				On heroku when deployed the react app is already built, this means the env vars will be set to whatever they were on build time.
-				
-				Once you build the react app all referenced variables are built in to the outputted code.
-				
-				Heroku populates the process.env with its env's defined in the dashboard.
-				
+						Doing it The Express way
+
+							 Heroku will normally populate our process.env for us, with the environment variables set in its own dashboard, just like how github has its secrets.
+
+							This applies to when we work with express.
+
+
+
+						Doing it The react way
+
+							if we were working with REACT we would just add these to heroku  in the dashboard like this:
+
+							On heroku when deployed the react app is already built, this means the env vars will be set to whatever they were on build time.
+
+							Once you build the react app all referenced variables are built in to the outputted code.
+
+							Heroku populates the process.env with its env's defined in the dashboard.
+
 
 <img src="https://imgur.com/eYl0L0I.png" width="200">
 
 <img src="https://imgur.com/qJUFzAZ.png" width="200">
-
 
 <img src="https://imgur.com/UZLurFl.png" width="200">
 
@@ -315,6 +314,151 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 &nbsp; 			    
 &nbsp;
 
+## TERRAFORM - Browser Basic auth - Adding password protection to static react app on heroku
+
+Buildpack to add to dev server: 
+
+https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/crak.tgz
+
+
+Securing Static Heroku React Site with Password and Admin login.
+
+https://github.com/mars/crak-buildpack#user-content-quick-start
+
+
+Technologies
+
+	 Terraform
+
+	Kong -> postgres DB
+
+	 Basic Browser Auth
+
+	“the kong part is handled for us”
+
+
+
+
+	Adding PSQL addon to heroku
+		
+		The web server is a Kong gateway that uses Heroku Postgre to store configuration of services, route, and plugins.
+
+
+
+	Kong uses PSQL to store its information so we will add postgres addon to heroku
+
+		heroku addons:create heroku-postgresql:hobby-dev —app webshopproject-development
+
+
+
+	routes.tf to add in root of development branch deploy.
+
+			resource "kong_service" "react" {
+			  name     = "create-react-app"
+			  protocol = "http"
+			  host     = "127.0.0.1"
+			  port     = 3000
+			}
+
+			resource "kong_route" "web_root" {
+			  protocols  = ["https", "http"]
+			  paths      = ["/"]
+			  service_id = "${kong_service.react.id}"
+			}
+			provider "random" {
+			  version = "~> 2.0"
+			}
+
+			resource "random_id" "private_access_password" {
+			  byte_length = 32
+			}
+
+			output "private_access_password" {
+			  value = "${random_id.private_access_password.b64_url}"
+			}
+
+			resource "kong_plugin" "react_basic_auth" {
+			  name        = "basic-auth"
+			  service_id  = "${kong_service.react.id}"
+
+			  config = {
+			    hide_credentials = "true"
+			  }
+			}
+
+			resource "kong_consumer" "private_access" {
+			  username = "private"
+			}
+
+			resource "kong_consumer_plugin_config" "private_access_credentials" {
+			  consumer_id = "${kong_consumer.private_access.username}"
+			  plugin_name = "basic-auth"
+
+			  config = {
+			    username = "private"
+			    password = "${random_id.private_access_password.b64_url}"
+			  }
+			}
+
+
+	Create a main.tf file 
+
+			[
+			terraform {
+			  backend "pg" {}
+			}
+
+			provider "kong" {
+			  version        = "~> 1.7"
+			  kong_admin_uri = "http://127.0.0.1:8001"
+			}
+
+			 pg is configured during the deploy i think
+
+			 Filled with heroku addon info
+
+			Kong admin uri is set to local because its on the server running it
+
+
+
+	When we want the password to login with we write: 
+ 
+			heroku run terraform output private_access_password —app webshopproject-development
+
+
+
+	Preventing password being echoed in github actions yaml when building…
+
+			output "private_access_password" {
+			  value = "${random_id.private_access_password.b64_url}"
+			  sensitive = true
+			}
+
+
+
+
+	Access page if it says you are not authorized
+
+
+			https://username:PASSWORD@webshopproject-development.herokuapp.com/
+
+
+
+
+
+
+&nbsp;
+&nbsp; 
+&nbsp;     
+&nbsp; 
+&nbsp;
+&nbsp;
+&nbsp; 
+&nbsp;  
+&nbsp; 
+&nbsp;
+&nbsp; 			    
+&nbsp;
 
 
 ### Adding sentry to github oauth and setting up project
