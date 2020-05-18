@@ -191,6 +191,71 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 
 
 
+#### Handling ENV variables, Locally and Remotely on heroku server
+
+
+			Setup ENV's with DOTenv Express VS react lccal and production.
+
+			We want to render a component based on env variables set to dev or production.
+
+
+#### Setting it up locally fist:
+
+
+			App.js 
+
+
+			require('dotenv').config();
+
+			  {process.env.REACT_APP_SERVER_MODE === 'development' ? <SentryComponent /> : ''}
+
+
+			The express way
+
+				In express you do not prefix with REACT_APP_*******
+
+				so the env can simply just be SERVER_MODE and be accessed by process.env.SERVERMODE
+
+
+			The react way
+			
+				Prefixing .env variables with REACT_APP
+
+
+				React only includes variables with that prefix, so you if you have malicious dependencies, or just a public build, you don't expose things like local keys and stuff
+
+
+				“in .env SERVER_MODE=development should be REACT_APP_SERVER_MODE=development”
+
+
+
+
+#### Setting up env variable to work on development and production server
+
+
+			The Express way
+
+				Heroku will normally populate our process.env for us, with the environment variables set in its own dashboard, just like how github has its secrets.
+
+				This applies to when we work with express.
+
+
+
+			The react way
+
+				if we were working with REACT we would just add these to heroku  in the dashboard like this:
+
+				On heroku when deployed the react app is already built, this means the env vars will be set to whatever they were on build time.
+
+				When we are running a react build we need to set these in the ACTIONS YML.
+
+				They will be built in the YML and have zero impact heroku.
+
+				Once you build the react app all referenced variables are built in to the outputted code.
+
+
+
+
 
 ### Adding sentry to github oauth and setting up project
 
