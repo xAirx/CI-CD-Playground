@@ -365,6 +365,8 @@ https://github.com/xAirx/WebShopApp/blob/master/.github/workflows/nodejs.yml
 
 ## TERRAFORM - Browser Basic auth - Adding password protection to static react app on heroku
 
+https://medium.com/@nghnam/kong-configuration-management-with-terraform-52f47dee7c8
+
 	Buildpack to add to dev server: 
 
 	https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/crak.tgz
